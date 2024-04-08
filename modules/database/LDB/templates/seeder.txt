@@ -1,0 +1,11 @@
+from modules.database.LDB.system.Seeder import Seeder
+from modules.database.LDB.models.:moduleName import :moduleName
+
+
+class :className(Seeder):
+    def __init__(self):
+        super().__init__(":tableName")
+        self.__data: list[dict] = []
+
+    def run(self):
+        for data_item in self.__data: :moduleName().create(data_item)

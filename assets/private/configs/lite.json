@@ -1,0 +1,10 @@
+{
+  "file_directories":{
+    "general":"assets",
+    "backup":"backup",
+    "tables":"tables",
+    "types":"types"
+  },
+  "settings":{"lang":"Eng"},
+  "version":"beta version 1.0"
+}

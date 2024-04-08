@@ -1,0 +1,1 @@
+{"keys":["title","image"],"consts":["id","user_id","created_at"],"defaults":["id","created_at","updated_at"],"types":{"id":"int","title":"str","image":"str","created_at":"str","updated_at":"str"},"attributes":{"id":"unique","user_id":"relation:users|id","title":"minmax[3,64]","image":"image","created_at":"datetime","updated_at":"datetime"},"free_id":null}
