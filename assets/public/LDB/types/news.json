@@ -1,1 +1,0 @@
-{"keys":[],"consts":["id","created_at"],"defaults":["id","created_at","updated_at"],"types":{"id":"int","created_at":"str","updated_at":"str"},"attributes":{"id":"unique","created_at":"datetime","updated_at":"datetime"},"free_id":null}

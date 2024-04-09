@@ -7,6 +7,6 @@ class Factories:
 
     def run(self):
         for factory in self.__factories:
-            factory.run(6)
+            factory.create(6)
 
     def fresh(self): ...

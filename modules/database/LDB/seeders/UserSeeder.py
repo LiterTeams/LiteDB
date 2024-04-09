@@ -22,7 +22,6 @@ class UserSeeder(Seeder):
                 "nickname": "Selenium",
                 "email": "selenium@gmail.com",
                 "password": "password",
-                "role": "user",
             }
         ]
 

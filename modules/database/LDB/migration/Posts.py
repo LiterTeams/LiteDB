@@ -6,7 +6,7 @@ class Posts(Migration):
         __slots__ = "__columns"
         self.__columns: dict[str, str] = {
             "id": "int|unique|const|auto",
-            "user_id": "id|relation:users|const",
+            "user_id": "int|relation:users|const",
             "title": "str|required|minmax[3,64]",
             "image": "str|image|required",
             "created_at": "str|datetime|const|auto",

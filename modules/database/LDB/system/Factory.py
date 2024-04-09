@@ -8,7 +8,7 @@ class Factory:
 
     def generate(self, table: str | None = None):
         table = table or self.__table
-        file = load_datas(file_name="factory", file_format="txt", path="modules\\database\\LDB\\templates")
+        file = load_datas(fn="factory", ff="txt", path="modules\\database\\LDB\\templates")
         # module_name = table.lower().title()
         class_name = table.lower().title() + "Factory"
         table_name = table.lower()

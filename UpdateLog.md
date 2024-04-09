@@ -1,5 +1,9 @@
 # Логи обновления
 
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=800&duration=3000&pause=5000&width=640&height=64&lines=Lite+DB+-+Alpha+Version+0.1.0+%7C+10.04.2024)]()
+
+Добавление файлов, котоыре гит решил нахуй стереть, при обновлении до версии Alpha 0.1.0
+
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=800&duration=3000&pause=5000&width=640&height=64&lines=Lite+DB+-+Alpha+Version+0.1.0+%7C+09.04.2024)]()
 
 ### Новое

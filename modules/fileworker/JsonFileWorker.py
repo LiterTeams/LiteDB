@@ -14,7 +14,7 @@ class JsonFileWorker:
     def __dynamic_load(self, file_name: str) -> None:
         if file_name in self.__configs: return print("Duplicated")
         try:
-            config = load_datas(file_name=file_name, file_format="json", path=self.__config_folder)
+            config = load_datas(fn=file_name, ff="json", path=self.__config_folder)
             self.__configs[file_name] = config
             self.__virtual_tree[file_name] = False
         except FileNotFoundError as error: print(error)
