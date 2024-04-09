@@ -39,7 +39,7 @@ class DB:
 
     @staticmethod
     def __hash(value) -> str:
-        sha256_hash = hashlib.new("sha_256")
+        sha256_hash = hashlib.new("sha256")
         sha256_hash.update(value.encode())
         return sha256_hash.hexdigest()
 
@@ -72,6 +72,8 @@ class DB:
             if not type_check(value, self.__types.get("types").get(key)): raise Exception(f"table:{self.__table} | type: {key}")
             if "unique" in self.__types.get("attributes").get(key) and not self.__unique_check(value): raise Exception(f"table:{self.__table} | type: {key}")
             if "enum" in self.__types.get("attributes").get(key) and not enum_check(value, self.__types.get("attributes").get(key)): raise Exception("Enum Error")
+            if "hash" in self.__types.get("attributes").get(key):
+                data[key] = self.__hash(value)
             for default in self.__types.get("defaults"):
                 if default == "role" and default not in data:
                     default = self.__types.get("attributes").get("role").split("|")
@@ -79,8 +81,9 @@ class DB:
                     data = data | {"role": default}
         data = {"id": id} | data
         data = data | {"created_at": date, "updated_at": date}
-        self.__data.get(self.__table).append(data)
-        self.__disconnection()
+        print(data)
+        #self.__data.get(self.__table).append(data)
+        #self.__disconnection()
 
     def update(self, object_id: int, data: dict[str, str]):
         self.__connection()
