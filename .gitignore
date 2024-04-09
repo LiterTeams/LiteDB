@@ -5,6 +5,8 @@
 __pycache__/
 .pytest_cache/
 *.py[cod]
+
+# Custom
 *.jpg
 *.jpeg
 *.png
@@ -12,6 +14,9 @@ __pycache__/
 *.xml
 *.webp
 *.webm
+/assets/private/backup/*.json
+/assets/public/LDB/tables/*.json
+/assets/public/LDB/types/*.json
 
 /target
 
