@@ -1,5 +1,4 @@
 from json import load
-from modules.errors.NotFoundError import NotFoundError
 
 def load_datas(path: str, fn: str | None = None, ff: str | None = None) -> dict | str:
     try:
@@ -17,4 +16,4 @@ def load_datas(path: str, fn: str | None = None, ff: str | None = None) -> dict 
             with open(path, "r") as file:
                 return file.read()
     except FileNotFoundError:
-        raise NotFoundError(value=path, function_name="load datas")
+        print(f"fun load_datas | file: {fn}.{ff} | path: {path}")

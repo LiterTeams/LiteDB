@@ -9,7 +9,7 @@ from modules.helpers.find_directory import find_directory
 
 # Global Variables
 
-FF_FORMATS: set[str] = {"png", "jpg", "jpeg", "avif", "webp", "mp4", "avi", "webm", "json", "txt"}
+FF_FORMATS: set[str] = {"png", "jpg", "jpeg", "avif", "webp", "mp4", "avi", "webm", "json", "txt", "py"}
 FLN_PRIVATES: set[str] = {"venv", ".idea", ".git", "$WinREAgent", "edb", "OneDriveTemp", "OSPanel", "PerfLogs", "Program Files", "Program Files (x86)", "ProgramData", "temp", "Windows", "Users"}
 FN_PRIVATES: set[str] = {"CON", "PRN", "AUX", "NUL", "COM", "LPT"}
 SPEC_CHARS_PRIVATES: set[str] = {"#", "%", "&", "/", "«", "»", "<", ">", ":", "=", ","}

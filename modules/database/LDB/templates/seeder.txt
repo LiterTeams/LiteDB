@@ -5,7 +5,9 @@ from modules.database.LDB.models.:moduleName import :moduleName
 class :className(Seeder):
     def __init__(self):
         super().__init__(":tableName")
+        __slots__ = "__data"
         self.__data: list[dict] = []
 
     def run(self):
+        if len(self.__data) == 0: return
         for data_item in self.__data: :moduleName().create(data_item)

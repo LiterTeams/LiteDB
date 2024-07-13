@@ -5,6 +5,7 @@ from modules.database.LDB.models.User import User
 class UserSeeder(Seeder):
     def __init__(self):
         super().__init__("users")
+        __slots__ = "__data"
         self.__data: list[dict] = [
             {
                 "nickname": "Salfiya NSFW",
@@ -26,4 +27,5 @@ class UserSeeder(Seeder):
         ]
 
     def run(self):
+        if len(self.__data) == 0: return
         for data_item in self.__data: User().create(data_item)

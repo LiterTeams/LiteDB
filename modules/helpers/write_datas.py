@@ -11,4 +11,4 @@ def write_datas(datas: dict, folder_name: str, fn: str | None = None, ff: str | 
             with open(find_directory(folder_name), "w") as file:
                 dump(datas, file, indent=None, separators=(",", ":"), ensure_ascii=False)
     except FileNotFoundError:
-        raise NotFoundError(value=folder_name, function_name="write datas")
+        raise NotFoundError(message=f"folder: {folder_name} | write datas")

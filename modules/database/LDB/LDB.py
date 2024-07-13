@@ -1,25 +1,25 @@
 from modules.fileworker.JsonFileWorker import JsonFileWorker
 
+from modules.database.LDB.system.DB import DB
 from modules.database.LDB.system.Migration import Migration
 from modules.database.LDB.system.Model import Model
 from modules.database.LDB.system.Factory import Factory
 from modules.database.LDB.system.Seeder import Seeder
 
 from modules.database.LDB.migration.Migrations import Migrations
+from modules.database.LDB.models.Models import Models
 from modules.database.LDB.factories.Factories import Factories
 from modules.database.LDB.seeders.Seeders import Seeders
 
-from modules.helpers.auto_search_files import auto_search_files
 
 class LDB:
     def __init__(self):
         self.jfw = JsonFileWorker()
         self.__migrations = Migrations()
+        self.models = Models()
         self.__factories = Factories()
         self.__seeders = Seeders()
         self.__configs = None
-        self.__tables = None
-        self.__types = None
         self.__status = False
 
     def migration(self): self.__migrations.run()
@@ -28,14 +28,15 @@ class LDB:
 
     def fresh(self, use_migration: bool = True, use_seeder: bool = True, use_factory: bool = True):
         if use_migration: self.__migrations.fresh()
-        if use_seeder: self.__seeders.fresh()
-        if use_factory: self.__factories.fresh()
+        if use_seeder: self.__seeders.run()
+        if use_factory: self.__factories.run()
 
     def start(self, configs: dict):
         self.__configs = configs
-        # tables = auto_search_files(folder_name="tables", fln_blacklist=["private"], fln_whitelist=["LDB"])
-        # types = auto_search_files(folder_name="types", fln_blacklist=["private"], fln_whitelist=["LDB"])
         self.__status = True
+
+    @staticmethod
+    def merger(): DB().merger()
 
     def generate(self, table: str) -> None:
         self.generate_migration(table)
@@ -59,8 +60,7 @@ class LDB:
     def generate_factory(table: str) -> None:
         Factory(table).generate()
 
-    def shutdown(self):
-        self.__status = False
+    def shutdown(self): self.__status = False
 
     @property
     def status(self) -> bool: return self.__status

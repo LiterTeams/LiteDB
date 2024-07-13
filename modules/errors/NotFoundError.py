@@ -1,4 +1,5 @@
 class NotFoundError(Exception):
-    def __init__(self, value, function_name, message="Code Status: 404"):
-        self.message = f"{message} | Function: {function_name} | Value: {value}"
+    def __init__(self, message: str):
+        self.__status = "Code Status: 404"
+        self.message = f"{self.__status} | {message}"
         super().__init__(self.message)

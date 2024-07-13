@@ -1,0 +1,16 @@
+# def uppercase(func):
+#     def wrapper():
+#         original_result = func()
+#         modified_result = original_result.upper()
+#         return modified_result
+#     return wrapper
+
+def SERVICE(prefix: str): ...
+
+def GET(path: str | None = None): ...
+
+def POST(path: str | None = None): ...
+
+def PATCH(path: str | None = None): ...
+
+def DELETE(path: str | None = None): ...
